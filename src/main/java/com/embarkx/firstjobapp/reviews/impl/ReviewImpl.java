@@ -1,4 +1,8 @@
 package com.embarkx.firstjobapp.reviews.impl;
 
-public class ReviewImpl {
+import com.embarkx.firstjobapp.reviews.ReviewsService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ReviewImpl implements ReviewsService {
 }
