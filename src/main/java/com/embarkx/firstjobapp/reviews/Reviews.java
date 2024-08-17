@@ -1,9 +1,7 @@
 package com.embarkx.firstjobapp.reviews;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.embarkx.firstjobapp.company.Company;
+import jakarta.persistence.*;
 
 @Entity
 public class Reviews {
@@ -14,6 +12,9 @@ public class Reviews {
     private String description;
     private double rating;
 
+    @ManyToOne
+    private Company company;
+
     public Reviews() {
     }
 
@@ -23,6 +24,15 @@ public class Reviews {
 //        this.description = description;
 //        this.rating = rating;
 //    }
+
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Long getId() {
         return id;
