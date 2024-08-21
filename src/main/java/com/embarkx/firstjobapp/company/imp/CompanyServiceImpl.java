@@ -49,4 +49,9 @@ public class CompanyServiceImpl implements CompanyService {
             return false;
         }
     }
+
+    @Override
+    public int getCompanyById(Long companyId) {
+        return 1;
+    }
 }

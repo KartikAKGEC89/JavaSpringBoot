@@ -3,10 +3,7 @@ package com.embarkx.firstjobapp.reviews;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +17,13 @@ public class ReviewsController {
     }
 
     @GetMapping("/reviews")
-    public ResponseEntity<List<Reviews>> getReviews(@PathVariable Long id){
-        return new ResponseEntity<>(reviewsService.getReviews(id), HttpStatus.OK);
+    public ResponseEntity<List<Reviews>> getReviews(@PathVariable Long companyId){
+        return new ResponseEntity<>(reviewsService.getReviews(companyId), HttpStatus.OK);
+    }
+
+    @PostMapping("/reviews")
+    public ResponseEntity<String>createReview(@PathVariable Long companyId, @RequestBody Reviews review) {
+        reviewsService.createReview(companyId, review);
+        return new ResponseEntity<String>("Added successfully", HttpStatus.OK);
     }
 }

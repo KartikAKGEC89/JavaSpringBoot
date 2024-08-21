@@ -1,7 +1,5 @@
 package com.embarkx.firstjobapp.company;
 
-import com.embarkx.firstjobapp.job.Job;
-
 import java.util.List;
 
 
@@ -13,4 +11,6 @@ public interface CompanyService {
     void createCompany(Company company);
 
     boolean deleteCompanyById(Long id);
+
+    int getCompanyById(Long companyId);
 }

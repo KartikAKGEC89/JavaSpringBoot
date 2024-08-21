@@ -1,6 +1,7 @@
 package com.embarkx.firstjobapp.reviews;
 
 import com.embarkx.firstjobapp.company.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,7 @@ public class Reviews {
     private String description;
     private double rating;
 
+    @JsonIgnore
     @ManyToOne
     private Company company;
 
